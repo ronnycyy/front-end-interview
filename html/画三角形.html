@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div#demo1 {
+      width: 30px;
+      height: 30px;
+      background-color: aqua;
+      border: 100px solid;
+      border-color: orange blue red green;
+    }
+
+    div#demo2 {
+      width: 0;
+      height: 0;
+      border-top: 100px solid orange;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 100px solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>border其实是梯形</h1>
+  <div id="demo1"></div>
+  <hr>
+  <h1>利用border的特性画三角形</h1>
+  <div id="demo2"></div>
+</body>
+
+</html>

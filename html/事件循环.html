@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>请说出以下代码打印结果</h1>
+  <script>
+    // 同1
+    console.log(1);
+
+    // 放宏1
+    setTimeout(() => {
+      // 宏1
+      // 宏1执行
+      console.log(2);
+      // 宏1执行，放宏3
+      setTimeout(() => {
+        // 宏3
+        // 宏3执行
+        console.log(14);
+        // 宏3执行
+        new Promise((resolve, reject) => {
+          // 宏3执行
+          console.log(15);
+          // 宏3执行，放微7
+          resolve()
+        }).then(res => {
+          // 微7
+          console.log(16);
+        })
+      })
+      // 宏1执行
+      new Promise((resolve, reject) => {
+        // 宏1执行
+        console.log(3);
+        // 宏1执行，放微5
+        resolve()
+      }).then(res => {
+        // 微5
+        console.log(4);
+      })
+    })
+
+    new Promise((resolve, reject) => {
+      // 放微1
+      resolve()
+    }).then(res => {
+      // 微1， 放微3
+      console.log(5);
+    }).then(res => {
+      // 微3
+      console.log(6);
+
+    })
+
+    new Promise((resolve, reject) => {
+      // 同2
+      console.log(7);
+      // 放微2
+      resolve()
+    }).then(res => {
+      // 微2，放微4
+      console.log(8);
+    }).then(res => {
+      // 微4
+      console.log(9);
+
+    })
+
+    // 放宏2
+    setTimeout(() => {
+      // 宏2
+      // 宏2执行
+      console.log(10);
+      // 宏2执行
+      new Promise((resolve, reject) => {
+        // 宏2执行
+        console.log(11);
+        // 宏2执行，放微6
+        resolve()
+      }).then(res => {
+        // 微6
+        console.log(12);
+      })
+    })
+
+    // 同3
+    console.log(13);
+  </script>
+</body>
+
+</html>
